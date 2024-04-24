@@ -1,0 +1,513 @@
+ LIST
+
+Program on duplicate numbers
+
+l=[1,1,1,2,2,3,4]
+s=set(l)
+print(s)
+OUTPUT
+{1, 2, 3, 4}
+
+USING STRING
+
+s="google"
+p=set(s)
+for i in p:
+    c=0
+    for j in s:
+        if i==j:
+            c+=1
+    print(i,"-",c)
+OUTPUT:
+o - 2
+l - 1
+g - 2
+e - 1
+
+Count a number of occurences in a list
+l=[1,1,1,2,2,3,4]
+p=set(l)
+for i in p:
+    c=0
+    for j in l:
+        if i==j:
+            c+=1
+    print(i,"-",c) 
+OUTPUT
+1 - 3
+2 - 2
+3 - 1
+4 - 1
+
+Finding the sum of even and odd numbers
+l=[1,1,1,2,2,3,4]
+even=0
+odd=0
+for i in l:
+    if i%2==0:
+        even=even+i
+    else:
+        odd=odd+i
+print("even=",even)
+print("odd=",odd)
+OUTPUT
+even= 8
+odd= 6
+
+Finding a common number in a list
+l1=[1,2,3,4,5]
+l2=[4,5,6,7,8,9]
+l=[]
+for i in l1:
+    if i in l2:
+        l.append(i)
+print(l)        
+OUTPUT
+[4, 5]
+
+Finding a non common numbers in a list
+l1=[1,2,3,4,5]
+l2=[4,5,6,7,8,9]
+l=[]
+for i in l1:
+    if i not in l2:
+        l.append(i)
+for i in l2:
+    if i not in l1:
+        l.append(i)
+print(l)     
+OUTPUT
+[1, 2, 3, 6, 7, 8, 9]
+
+Find the sum of N natural numbers
+
+Find the prime number in a given a range
+def isprime(x):
+    for i in range(2,x//2):
+        if x%i==0:
+            return 0
+    else:
+        return 1
+l=int(input())
+u=int(input())
+for i in range(l,u+1):
+    a=isprime(i)
+    if a==1:
+        print(i)
+OUTPUT
+1
+15
+1
+2
+3
+4
+5
+7
+11
+13
+
+Convert a decimal number to binary:
+n=int(input())
+s=""
+while n>0:
+    rem=n%2
+    s=s+str(rem)
+    n=n//2
+print(s[::-1])
+OUTPUT
+10
+1010
+
+Check if a number is a perfect square
+n=int(input())
+i=1
+while i**2<n:
+    i+=1
+if i**2==n:
+    print("perfect square")
+else:
+    print("non perfect square")    
+OUTPUT
+9
+perfect square
+6
+non perfect square
+
+Check if a number is power of two
+n=int(input())
+i=1
+while 2**i<n:
+    i+=1
+if i**2==n:
+    print("power of 2")
+else:
+    print("non power of 2")
+OUTPUT
+16
+power of 2
+9
+non power of 2
+
+Check if a number is Armstrong number
+n=int(input())
+a=0
+t=n
+d=len(str(n))
+while t>0:
+    rem=t%10
+    a+=(rem**d)
+    t=t//10
+if a==n:
+    print("it is a armstrong")
+else:
+    print("not armstrong")  
+OUTPUT
+372
+not armstrong
+371
+it is a armstrong
+
+Check if a number is a perfect number
+n=int(input())
+r=0
+for i in range(1,n):
+    if n%i==0:
+        r=r+i
+if r==n:
+    print(" it is a perfect number")
+else:
+    print("not perfect number")
+OUTPUT
+6
+ it is a perfect number
+17
+not perfect number
+
+Check if a number is abundant number
+n=int(input())
+r=1
+for i in range(2,n):
+    if n%i==0:
+        r=r+i
+if r>n:
+    print(" it is a abundant number")
+else:
+    print("not abundant number")
+OUTPUT
+12
+ it is a abundant number
+
+STRING
+a)Slicing concept
+Example:s="string"
+print(s[3::])
+
+Example:Finding even and odd number in string by slicing
+a=[1,2,3,4,5,6,7,8,9,10]
+even=a[1::2]
+odd=a[-2::-2]
+l=[]
+l.extend(even)
+l.extend(odd)
+print(l)
+OUTPUT
+[2, 4, 6, 8, 10, 9, 7, 5, 3, 1]
+
+n=int(input())
+a=[1,2,3,4,5]
+if n>len(a):
+    n=n%len(a)
+print(a[-n::]+a[0:-n])
+OUTPUT
+2
+[4, 5, 1, 2, 3]
+
+OOPS(IMPORTANT) in Python:
+
+User Defined datatype,thus we can create class
+class person:
+    nickname="Chintu"
+    roll="56"
+    height="6"
+    def run(self):
+        print("I can run"+self.nickname+self.roll)
+harsha=person()
+anjali=person()
+harsha.run()
+anjali.run()
+OUTPUT
+I can runChintu56
+I can runChintu56
+
+class person:
+    def __init__(self,x,y,z):
+        self.nickname=x
+        self.roll=y
+        self.height=z
+    def run(self):
+        print("i can run", self.nickname, self.roll)
+harsha=person("chintu",78,6)
+anjali=person("mary",89,5)
+harsha.run()
+anjali.run()
+OUTPUT
+i can run chintu 78
+i can run mary 89
+
+COMPLETE ABSTRACTION:
+class mobile:
+    def functions(self):
+        pass
+class iphone(mobile):
+    def functions(self):
+        print("hey i am iphone")    
+class samsung(mobile):
+    def functions(self):
+        print("hey i am samsung")
+iphone13=iphone()
+iphone13.functions()
+samsungs3=samsung()
+samsungs3.functions()
+OUTPUT
+hey i am iphone
+hey i am samsung
+
+ENCPULSATION(Logically it doesn't work in python)
+
+     INHERITANCE:
+A)Single Inheritance:
+class parents:
+    def coolness(self):
+       print("parents are cool")
+class child(parents):
+    def coding(self)    :
+        print("i know coding")
+rahul=child()
+rahul.coolness()
+rahul.coding()
+OUTPUT
+parents are cool
+i know coding 
+B)Multiple Inheritance:
+class parents:
+    def coolness(self):
+       print("parents are cool")
+class child(parents):
+    def coding(self)    :
+        print("i know coding")
+class child2(child):
+    def singing(self):
+        print("i can sing")
+rahul=child2()    
+rahul.coolness()
+rahul.coding()
+rahul.singing() 
+OUTPUT
+parents are cool
+i know coding
+i can sing 
+C)Hirerachial Inheritance:
+class parent:
+    def coolness(self):
+       print("parents are cool")
+class child1(parent):
+    def coding(self)    :
+        print("i know coding")
+class child2(parent):
+    def singing(self):
+        print("i can sing")
+anu=child1()    
+anu.coolness()
+anu.coding()
+rahul=child2()
+rahul.singing()
+OUTPUT
+parents are cool
+i know coding
+i can sing
+Method overriding
+class addition:
+    def add(self,x,y):
+        print(x+y)
+class child(addition):
+    def add(self,x,y,z):
+        print(x+y+z)
+i=child()
+i.add(5,6,7)
+OUTPUT
+18
+
+DATA STRUCTURES IN A PYTHON:
+1)SEARCHING:
+a)Linear Search
+l=[1,2,3,4,5,6,7,8]
+for i in l:
+    if i==19:
+        print("found")
+        break
+    else:
+        print("not found")
+OUTPUT
+not found
+not found
+not found
+not found
+not found
+not found
+not found
+not found
+b)Binary Search
+l=[9,7,78,10,5,1,0]
+l.sort()
+print(l)
+i=0
+j=len(l)-1
+s=10
+while i<j:
+    mid=(i+j)//2
+    if l[mid]==s:
+        print(mid,"found")
+        break
+    elif l[mid]>s:
+        j=mid-1
+    else:
+        i=mid+1
+else:
+    print("Not found")
+OUTPUT
+[0, 1, 5, 7, 9, 10, 78]
+5 found
+
+n is a total number of elements
+In Linear search time complexity
+Big O(1)
+->Constant one
+O(n)
+->Using One loop only
+Space complexity will be same
+
+In Binary search time complexity
+O(log n)
+->Decreasing half size of iteration
+
+2)SORTING:
+a)Bubble sort
+b=[9,7,97,10,5,1,0]
+for i in range(0,len(b)-1):
+    for j in range(0,len(b)-i-1):
+        if b[j]>b[j+1]:
+            b[j],b[j+1]=b[j+1],b[j]
+print(b)
+OUTPUT
+[0, 1, 5, 7, 9, 10, 97]
+
+O(n^2)
+->Two loops are used
+b=[6,5,4,3,21,19,10]
+for i in range(0,len(b)-1):
+    m=i
+    for j in range(i+1,len(b)):
+        if b[m]>=b[j]:
+            m=j
+    b[i],b[m]=b[m],b[i]
+print(b)
+OUTPUT
+[3, 4, 5, 6, 10, 19, 21]
+
+QUICK SORT
+def partition(arr,low,high):
+    pivot=arr[low]
+    start=low+1
+    end=high
+    while True:
+        while start<=end and arr[start]<=pivot:
+            start+=1
+        while start<=end and arr[end]>pivot:
+            end-=1
+        if start<end:
+            arr[start],arr[end]=arr[end],arr[start]
+        else:
+            break
+    arr[low],arr[end]=arr[end],arr[low]
+    return end
+def quicksort(arr,beg,end):
+    if beg<end:
+        p=partition(arr,beg,end)
+        quicksort(arr,beg,p-1)
+        quicksort(arr,p+1,end)
+a=[8,7,6,1,4,5,2,3]
+b=0
+e=len(a)-1
+quicksort(a,b,e)
+print(a)
+OUTPUT
+[1, 2, 3, 4, 5, 6, 7, 8]
+
+STACK
+class stack:
+    def __init__(self):
+        self.top=-1
+        self.size=5
+        self.list=[]
+    def push(self,data):
+        if len(self.list)==5:
+            print("full")
+            return 0
+        self.top+=1
+        self.list.append(data)
+    def pop(self):
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        self.top-=1
+        self.list.pop()
+    def peek(self):
+        print(self.list)
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        elif self.top>5:
+            print("out of index")
+        else:
+            print(self.list[self.top])
+s=stack()
+s.push(1)
+s.push(2)
+s.push(3)
+s.push(4)
+s.push(5)
+s.pop()
+s.push(6)
+s.peek()
+OUTPUT
+[1, 2, 3, 4, 6]
+6
+
+Postfix
+l="5678+-*"
+a=[]
+for i in l:
+    if i.isdigit():
+        a.append(int(i))
+    else:
+        op2=a.pop()
+        op1=a.pop()
+        if i=="+":
+            a.append(op1+op2)
+        elif i=="-":
+            a.append(op2-op1)
+        elif i=="*":
+            a.append(op1*op2)
+        elif i=="/":
+            a.append(op1/op2)
+print(a)
+OUTPUT
+[45]
+
+QUEUE
+
+
+
+
+
+
